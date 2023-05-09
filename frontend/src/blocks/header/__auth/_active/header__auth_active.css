@@ -1,0 +1,5 @@
+.header__auth_active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}

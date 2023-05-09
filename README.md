@@ -4,12 +4,12 @@
   
 Пожалуйста, прикрепите в это описание ссылку на сайт, размещенный на Яндекс.Облаке.
 
-Адрес репозитория: https://github.com/...
+Адрес репозитория: https://github.com/BaronPenteract/react-mesto-api-full-gha
 
 ## Ссылки на проект
 
-IP-адрес x.x.x.x
+IP-адрес 51.250.13.241
 
-Frontend https://...
+Frontend https://baron.nomoredomains.monster
 
-Backend https://...
+Backend https://api.baron.nomoredomains.monster

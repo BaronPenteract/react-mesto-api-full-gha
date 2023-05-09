@@ -1,0 +1,20 @@
+.profile__info {
+  display: grid;
+  column-gap: 19px;
+  row-gap: 9px;
+  grid-template-areas:
+  "title title btn"
+  "subtitle subtitle .";
+}
+
+@media screen and (max-width: 545px) {
+  .profile__info {
+    text-align: center;
+    grid-template-columns: 18px 1fr 18px;
+    column-gap: 9px;
+    row-gap: 5px;
+    grid-template-areas:
+    ". title btn"
+    ". subtitle .";
+  }
+}

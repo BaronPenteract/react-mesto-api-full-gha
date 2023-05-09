@@ -1,0 +1,7 @@
+.form__input_type_error {
+  border-bottom-color: #ff0000;
+}
+
+.form__input_type_error:focus {
+  border-bottom-color: #ff0000;
+}
