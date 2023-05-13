@@ -18,6 +18,7 @@ const {
 } = require('./controllers/users');
 
 const { requestLogger, errorLogger } = require('./middlewares/logger');
+const cors = require('./middlewares/cors');
 
 const { URL_REGEXP } = require('./utils/constants');
 const { NotFoundError } = require('./utils/errors');
@@ -44,6 +45,8 @@ app.use(limiter);
 app.use(helmet());
 
 app.use(requestLogger);
+
+app.use(cors);
 
 app.post('/signin', celebrate({
   [Segments.BODY]: Joi.object().keys({

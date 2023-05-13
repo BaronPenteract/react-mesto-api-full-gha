@@ -9,6 +9,7 @@ module.exports.createCard = (req, res, next) => {
   const { user } = req;
 
   Card.create({ name, link, owner: user._id })
+    .then((card) => card.populate('owner'))
     .then((card) => res.send(card))
     .catch((err) => {
       if (err.name === 'ValidationError' || err.name === 'CastError') {
@@ -21,6 +22,7 @@ module.exports.createCard = (req, res, next) => {
 
 module.exports.getCards = (req, res, next) => {
   Card.find({})
+    .populate('owner likes')
     .then((cards) => res.send(cards))
     .catch(() => {
       next(new InternalServerError('Что-то пошло не так.'));
@@ -59,11 +61,12 @@ module.exports.likeCard = (req, res, next) => {
   const { user } = req;
 
   Card.findByIdAndUpdate(cardId, { $addToSet: { likes: user._id } }, { new: true })
+    .populate('owner likes')
     .then((card) => {
       if (!card) {
         return next(new NotFoundError('Карточка с таким id не найдена.'));
       }
-      return res.send(card.likes);
+      return res.send(card);
     })
     .catch((err) => {
       if (err.name === 'ValidationError' || err.name === 'CastError') {
@@ -79,11 +82,12 @@ module.exports.disLikeCard = (req, res, next) => {
   const { user } = req;
 
   Card.findByIdAndUpdate(cardId, { $pull: { likes: user._id } }, { new: true })
+    .populate('owner likes')
     .then((card) => {
       if (!card) {
         return next(new NotFoundError('Карточка с таким id не найдена.'));
       }
-      return res.send(card.likes);
+      return res.send(card);
     })
     .catch((err) => {
       if (err.name === 'ValidationError' || err.name === 'CastError') {
