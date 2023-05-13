@@ -47,7 +47,13 @@ app.use(helmet());
 app.use(requestLogger);
 
 app.use(cors);
-
+// CRASH TEST
+app.get('/crash-test', () => {
+  setTimeout(() => {
+    throw new Error('Сервер сейчас упадёт');
+  }, 0);
+});
+// END OF CRASH TEST
 app.post('/signin', celebrate({
   [Segments.BODY]: Joi.object().keys({
     email: Joi.string().email().required(),
