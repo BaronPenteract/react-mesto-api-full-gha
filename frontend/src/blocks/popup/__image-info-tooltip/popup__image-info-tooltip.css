@@ -1,0 +1,6 @@
+.popup__image-info-tooltip {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  object-position: center;
+}

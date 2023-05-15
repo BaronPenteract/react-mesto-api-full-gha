@@ -1,0 +1,12 @@
+@keyframes anim-avatar-button {
+  0% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 50%;
+  }
+}
+
+.anim-avatar-button:hover {
+  animation: anim-avatar-button .2s linear forwards;
+}

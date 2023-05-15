@@ -1,0 +1,27 @@
+.form__input {
+  width: 100%;
+  padding: 0 0 9px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  color: #000;
+  transition: border .2s linear;
+}
+
+.form__input:focus {
+  outline: none;
+  border-bottom-color: rgba(0, 0, 0, 0.8);
+}
+
+.form__input::placeholder {
+  color: #c4c4c4;
+  font-size: 14px;
+  line-height: 1.21;
+  font-weight: 400;
+}

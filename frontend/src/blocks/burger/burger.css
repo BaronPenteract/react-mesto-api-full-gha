@@ -1,0 +1,16 @@
+.burger {
+  display: none;
+  padding: 0;
+  margin: 0px 0 -2px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 545px) {
+  .burger {
+    display: block;
+  }
+}
